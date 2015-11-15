@@ -1,27 +1,43 @@
 <template name="switch_form">
-    <div class="choices">
+    <table class="choices">
         {{#each buildings}}
             {{#with floor.room}}
-                <div class="room">
-                    <h3>Room {{this.number}}</h3>
+                <tr class="room">
+                    <td>
+                        <h3> Building {{this.number}} </h3>
+                    </td>
                     {{#with this.switch}}
+                    <td>
                         <h4>Switch {{number}}</h4>
+                    </td>
+
+                    <td>
                         <input name="status_{{number}}" type="radio" id="on"/>
                         <label for="on">Left on</label>
+                    </td>
 
+                    <td>
                         <input name="status_{{number}}" type="radio" checked = "checked" id="off"/>
                         <label for="off">Turned off</label>
+                    </td>
 
+                    <td>
                         <input name="status_{{number}}" type="radio" id="already"/>
                         <label for="already">Already off</label>
+                    </td>
 
+                    <td>
                         <input name="status_{{number}}" type="radio" id="other"/>
                         <label for="other">Other</label>
-
+                    </td>
                     {{/with}}
-                </div>
+                </tr>
             {{/with}}
         {{/each}}
-        <button id="submit">Submit</button>
-    </div>
+        <tr>
+            <td colspan="2">
+                <button id="submit">Submit</button>
+            </td>
+        </tr>
+    </table>
 </template>
