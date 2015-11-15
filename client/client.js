@@ -1,14 +1,14 @@
 Template.switch_form.helpers({
-    rooms: function(){
-        console.log(Meteor.subscribe("rooms"));
-        console.log(Rooms.find());
-        return Rooms.find({});
+    buildings: function(){
+        console.log(Meteor.subscribe("buildings"));
+        console.log(Buildings.find());
+        return Buildings.find({});
     }
 });
 
 Template.switch_form.events({
     "click #submit": function(event){
         var switches = $("status");
-        switches =
+        //switches =
     }
 })
